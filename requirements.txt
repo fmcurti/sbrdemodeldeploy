@@ -1,0 +1,12 @@
+certifi==2019.11.28
+fastapi==0.48.0
+joblib==0.14.1
+numpy==1.18.1
+pydantic==1.4
+scikit-learn
+scipy==1.4.1
+six==1.14.0
+sklearn
+starlette==0.12.9
+wincertstore==0.2
+python-multipart
