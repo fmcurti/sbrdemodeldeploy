@@ -21,8 +21,11 @@ async def get_prediction(name, params,clientID):
         return {'error': 'unknown model'}
 
     x = np.array([params])
-    y = clf.predict(x)[0]  # just get single value
-    
+    try:
+        y = clf.predict(x)[0]  # just get single value
+    except:
+        return {'error': 'Wrong Parameters'}
+        
     try:
         prob = clf.predict_proba(x)[0].tolist()  # send to list for return
     except:
