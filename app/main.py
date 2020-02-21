@@ -25,7 +25,7 @@ async def get_prediction(name, params,clientID):
         y = clf.predict(x)[0]  # just get single value
     except:
         return {'error': 'Wrong Parameters'}
-        
+
     try:
         prob = clf.predict_proba(x)[0].tolist()  # send to list for return
     except:
@@ -66,7 +66,7 @@ async def create_upload_file(clientID:int ,file: UploadFile = File(...)):
 async def list_models(clientID: int):
     mypath = os.path.join('models',str(clientID))
     if not os.path.exists(mypath):
-        return []
+        return ''
     onlyfiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
     return '|'.join(onlyfiles)
 
